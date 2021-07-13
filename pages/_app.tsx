@@ -1,7 +1,14 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import { AppProps } from "next/app";
+
+import CarContextProvider from "../context/CarContext";
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <CarContextProvider>
+      <Component {...pageProps} />
+    </CarContextProvider>
+  );
 }
-export default MyApp
+
+export default MyApp;
